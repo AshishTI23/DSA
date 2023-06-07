@@ -19,7 +19,6 @@ class LinkedList(object):
 
 	def has_loop(self):
 		fast = slow = self.head
-
 		while fast and fast.next:
 			slow = slow.next
 			fast = fast.next.next
@@ -31,7 +30,6 @@ class LinkedList(object):
 
 	def print_list(self):
 		node = self.head
-
 		while node:
 			print(node.val)
 			node = node.next

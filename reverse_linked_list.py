@@ -20,7 +20,6 @@ class LinkedList(object):
 	def reverse(self):
 		prev = None
 		curr = self.head
-
 		while curr:
 			next = curr.next
 			curr.next = prev
@@ -31,7 +30,6 @@ class LinkedList(object):
 
 	def print_list(self):
 		node = self.head
-
 		while node:
 			print(node.val)
 			node = node.next
