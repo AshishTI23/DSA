@@ -27,7 +27,6 @@ class LinkedList(object):
 			curr = next
 		self.head = prev
 
-
 	def print_list(self):
 		node = self.head
 		while node:

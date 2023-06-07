@@ -32,16 +32,11 @@ class LinkedList(object):
 				else:
 					curr = curr.next
 					
-
-		
-
-
 	def print_list(self):
 		node = self.head
 		while node:
 			print(node.val)
 			node = node.next
-
 
 
 # Driver program
