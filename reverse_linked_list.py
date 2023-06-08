@@ -1,4 +1,4 @@
-# Given a linked list determine if it has cycle in it.
+# Reverse a linked list
 
 class Node(object):
 	"""docstring for Node"""
