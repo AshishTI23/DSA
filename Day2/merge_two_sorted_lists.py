@@ -37,3 +37,5 @@ class Solution:
         if not l1:
             temp.next = l2
         return head_node
+
+#YouTube: https://www.youtube.com/watch?v=Xb4slcp1U38&t=1032s

@@ -34,3 +34,5 @@ class Solution:
             else:
                 hash_map[self.array[index]] = index
         return list()
+
+#YouTube: https://www.youtube.com/watch?v=UXDSeD9mN-k&pp=ygUQdHdvIHN1bSBsZWV0Y29kZQ%3D%3D

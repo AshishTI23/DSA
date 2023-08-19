@@ -39,3 +39,5 @@ class Solution:
         if stack:
             return False
         return True
+
+#YouTube: https://www.youtube.com/watch?v=wkDfsKijrZ8&t=282s&pp=ygURdmFsaWQgcGFyYW50aGVzaXM%3D

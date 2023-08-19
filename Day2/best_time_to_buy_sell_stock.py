@@ -43,3 +43,5 @@ class Solution:
             max_profit = max(max_profit, self.prices[i] - min_buying)
             min_buying = min(self.prices[i], min_buying)
         return max_profit
+
+#YouTube: https://www.youtube.com/watch?v=excAOvwF_Wk
