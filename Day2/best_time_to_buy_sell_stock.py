@@ -41,5 +41,5 @@ class Solution:
         min_buying: int = self.prices[0]
         for i in range(1, len(self.prices)):
             max_profit = max(max_profit, self.prices[i] - min_buying)
-            min_buying = min(self.prices[i],min_buying)
+            min_buying = min(self.prices[i], min_buying)
         return max_profit
