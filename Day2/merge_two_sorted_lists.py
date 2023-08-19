@@ -12,7 +12,7 @@ class ListNode:
         self.val = val
         self.next = next
 class Solution:
-    def merge_two_linked_lists(self, first_list: Optional[ListNode], second_list: Optional[ListNode]) -> Optional[ListNode]:
+    def merge_two_sorted_linked_lists(self, first_list: Optional[ListNode], second_list: Optional[ListNode]) -> Optional[ListNode]:
         if not second_list:
             return first_list
         if not first_list:
