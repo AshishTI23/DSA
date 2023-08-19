@@ -13,6 +13,7 @@
 # return [0, 1].
 from typing import List, Dict
 
+
 class Solution:
     def __init__(self, nums: List[int], target: int):
         self.array = nums
@@ -20,7 +21,7 @@ class Solution:
 
     def brute_force(self) -> List[int]:
         for i in range(len(self.array)):
-            for j in range(i+1, len(self.array)):
+            for j in range(i + 1, len(self.array)):
                 if self.array[i] + self.array[j] == self.target:
                     return [i, j]
         return list()
@@ -35,4 +36,5 @@ class Solution:
                 hash_map[self.array[index]] = index
         return list()
 
-#YouTube: https://www.youtube.com/watch?v=UXDSeD9mN-k&pp=ygUQdHdvIHN1bSBsZWV0Y29kZQ%3D%3D
+
+# YouTube: https://www.youtube.com/watch?v=UXDSeD9mN-k&pp=ygUQdHdvIHN1bSBsZWV0Y29kZQ%3D%3D

@@ -21,15 +21,16 @@
 # Explanation: In this case, no transactions are done and the max profit = 0.
 
 from typing import List
-class Solution:
 
+
+class Solution:
     def __int__(self, prices: List[int]):
         self.prices = prices
 
     def brute_force(self) -> int:
         max_profit: int = 0
         for i in range(len(self.prices)):
-            for j in range(i+1, len(self.prices)):
+            for j in range(i + 1, len(self.prices)):
                 if self.prices[i] > self.prices[j]:
                     pass
                 else:
@@ -44,4 +45,5 @@ class Solution:
             min_buying = min(self.prices[i], min_buying)
         return max_profit
 
-#YouTube: https://www.youtube.com/watch?v=excAOvwF_Wk
+
+# YouTube: https://www.youtube.com/watch?v=excAOvwF_Wk

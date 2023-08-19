@@ -22,6 +22,7 @@
 # Explanation: s is an empty string "" after removing non-alphanumeric characters.
 # Since an empty string reads the same forward and backward, it is a palindrome.
 
+
 class Solution:
     def __init__(self, string: str) -> bool:
         self.string = string
@@ -42,4 +43,5 @@ class Solution:
                 end -= 1
         return True
 
-#YouTube: https://www.youtube.com/watch?v=028pTf2kBFI&t=231s
+
+# YouTube: https://www.youtube.com/watch?v=028pTf2kBFI&t=231s

@@ -14,6 +14,7 @@
 # Output: true
 from typing import List, Dict
 
+
 class Solution:
     def __init__(self, string: str):
         self.string = string
@@ -21,7 +22,7 @@ class Solution:
     def brute_force(self) -> bool:
         stack: List[str] = list()
         brackets_map: Dict[str, str] = {")": "(", "}": "{", "]": "["}
-        opening_bracket: Dict[str, str] = {"(": ")","{": "}","[": "]"}
+        opening_bracket: Dict[str, str] = {"(": ")", "{": "}", "[": "]"}
         if len(self.string) == 1:
             return False
         for item in self.string:
@@ -40,4 +41,5 @@ class Solution:
             return False
         return True
 
-#YouTube: https://www.youtube.com/watch?v=wkDfsKijrZ8&t=282s&pp=ygURdmFsaWQgcGFyYW50aGVzaXM%3D
+
+# YouTube: https://www.youtube.com/watch?v=wkDfsKijrZ8&t=282s&pp=ygURdmFsaWQgcGFyYW50aGVzaXM%3D
