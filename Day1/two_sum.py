@@ -23,7 +23,7 @@ class Solution:
             for j in range(i+1, len(self.array)):
                 if self.array[i] + self.array[j] == self.target:
                     return [i, j]
-        return []
+        return list()
 
     def with_hash(self) -> List[int]:
         hash_map: Dict[int, int] = hash()
@@ -33,3 +33,4 @@ class Solution:
                 return [hash_map[pair_item], index]
             else:
                 hash_map[self.array[index]] = index
+        return list()
