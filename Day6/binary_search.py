@@ -13,14 +13,17 @@ class Solution:
 
     def recursive_binary_search(self, low, high) -> int:
         if low >= high:
-            return -1
+            if low == high and self.array[low] == self.target:
+                return low
+            else:
+                return -1
         mid = (low + high) // 2
         if self.array[mid] == self.target:
             return mid
         elif self.array[mid] < self.target:
-            return self.recursive_binary_search(mid, high)
+            return self.recursive_binary_search(mid + 1, high)
         else:
-            return self.recursive_binary_search(low, mid)
+            return self.recursive_binary_search(low, mid - 1)
 
     def iterative_binary_search(self) -> int:
         low: int = 0
