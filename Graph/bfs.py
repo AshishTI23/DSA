@@ -10,7 +10,7 @@ class Solution:
         self.traversal_order: List[int] = []
         self.queue: List[int] = []
 
-    def bfs(self, node: int):
+    def bfs(self, node: int) -> List[int]:
         self.visited_list[node] = True
         self.queue.append(node)
         self.traversal_order.append(node)

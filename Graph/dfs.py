@@ -9,7 +9,7 @@ class Solution:
         self.visited_list: List[bool] = [False] * (len(self.graph) + 1)
         self.traversal_order: List[int] = []
 
-    def dfs(self, node: int):
+    def dfs(self, node: int) -> List[int]:
         self.visited_list[node] = True
         self.traversal_order.append(node)
         for connected_node in self.graph[node]:

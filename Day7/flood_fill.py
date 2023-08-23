@@ -29,7 +29,7 @@ class Solution:
         self.max_row: int = len(self.image)
         self.max_column: int = len(self.image[0])
 
-    def flood_fill_with_dfs(self, sr: int, sc: int):
+    def flood_fill_with_dfs(self, sr: int, sc: int) -> List[List[int]]:
         self.image[sr][sc] = self.new_color
         for index in range(4):
             nr = sr + self.slide_row[index]
