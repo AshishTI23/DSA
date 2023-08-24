@@ -29,5 +29,16 @@ class Solution:
             dp_array[index] = dp_array[index - 1] + dp_array[index - 2]
         return dp_array[n]
 
+    def optimal_fibonaaci_next(self, n: int) -> int:
+        prev0 = 0
+        prev1 = 1
+        if n == prev0:
+            return prev0
+        if n == prev1:
+            return prev1
+        for index in range(2, n + 1):
+            prev0, prev1 = prev1, (prev1 + prev0)
+        return prev1
 
-print(Solution().optimal_fibonaaci(9))
+
+print(Solution().optimal_fibonaaci_next(10))
