@@ -61,3 +61,5 @@ class Solution:
 
 
 print(Solution().min_energy_spent(6, [30, 10, 60, 10, 60, 50]))
+
+# https://www.youtube.com/watch?v=EgG3jsGoPvQ
