@@ -20,3 +20,4 @@ class Solution:
 
 
 Solution([3, 1, 2]).print_subsequnces()
+# https://www.youtube.com/watch?v=AxNNVECce8c&t=1255s
