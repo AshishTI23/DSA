@@ -9,7 +9,6 @@ class Solution:
         self.sequence = sequence
 
     def print_subsequnces(self, index: int = 0, subsequence_array: List[int] = []):
-        global subsequence_list
         if index >= len(self.sequence):
             print(subsequence_array)
             return
