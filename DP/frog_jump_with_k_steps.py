@@ -20,7 +20,7 @@ class Solution:
         if self.dp[n] != -1:
             return self.dp[n]
         min_step = float("inf")
-        for j in range(1, self.k):
+        for j in range(1, self.k + 1):
             if n - j >= 0:
                 jump = self.energy_spent(n - j) + abs(
                     self.heights[n] - self.heights[n - j]
@@ -29,7 +29,20 @@ class Solution:
         self.dp[n] = min_step
         return self.dp[n]
 
+    def optimal_energy_spent(self):
+        self.dp[0] = 0
+        for i in range(1, self.n):
+            min_step = float("inf")
+            for j in range(1, self.k + 1):
+                if i - j >= 0:
+                    jump = self.dp[i - j] + abs(self.heights[i] - self.heights[i - j])
+                    min_step = min(jump, min_step)
+            self.dp[i] = min_step
+        print(self.dp)
+        return self.dp[self.n - 1]
 
-heights: List[int] = [30, 10, 60, 10, 60, 50]
 
-print(Solution(heights, len(heights), 4).energy_spent(len(heights) - 1))
+# heights: List[int] = [30, 10, 60, 10, 60, 50]
+
+# print(Solution(heights, len(heights), 2).energy_spent(len(heights) - 1))
+# print(Solution(heights, len(heights), 4).optimal_energy_spent())
