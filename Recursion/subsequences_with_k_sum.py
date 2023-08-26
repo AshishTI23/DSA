@@ -23,6 +23,24 @@ class Solution:
         sum_ -= poped
         self.find_subsequnces_with_target_sum(index + 1, subsequence_array, sum_)
 
+    def find_one_subsequnce_with_target_sum(
+        self, index: int = 0, subsequence_array: List[int] = [], sum_: int = 0
+    ):
+        if index >= len(self.sequence):
+            if sum_ == self.target:
+                print(subsequence_array)
+                return True
+            return False
+        subsequence_array.append(self.sequence[index])
+        sum_ += self.sequence[index]
+        if self.find_one_subsequnce_with_target_sum(index + 1, subsequence_array, sum_):
+            return True
+        poped = subsequence_array.pop()
+        sum_ -= poped
+        if self.find_one_subsequnce_with_target_sum(index + 1, subsequence_array, sum_):
+            return True
+        return False
 
-Solution([1, 2, 1], 2).find_subsequnces_with_target_sum()
+
+Solution([1, 2, 1], 2).find_one_subsequnce_with_target_sum()
 # https://www.youtube.com/watch?v=eQCS_v3bw0Q
