@@ -1,4 +1,5 @@
 # August-30-2023
+import copy
 
 # Given an n x n array of integers matrix, return the minimum sum of any falling path through matrix.
 #
@@ -62,6 +63,27 @@ class Solution:
             mini = min(mini, min_path_sum(row, j, dp))
         return mini
 
+    def tabular(self):
+        row = len(self.input_matrix)
+        column = len(self.input_matrix[0])
+        prev = self.input_matrix[0]
+        curr = [0] * (column)
+        for i in range(1, row):
+            up = right = left = float("inf")
+            for col in range(column):
+                up = self.input_matrix[i][col] + prev[col]
+                if (col - 1) >= 0:
+                    left = self.input_matrix[i][col] + prev[col - 1]
+                if (col + 1) < column:
+                    right = self.input_matrix[i][col] + prev[col + 1]
+                curr[col] = min(up, min(left, right))
+            prev = curr[:]
+        mini = float("inf")
+        for item in prev:
+            mini = min(mini, item)
+        return mini
+
 
 matrix = [[2, 1, 3], [6, 5, 4], [7, 8, 9]]
-print(Solution(matrix).memozation())
+# matrix = [[-19,57],[-40,-5]]
+print(Solution(matrix).tabular())
