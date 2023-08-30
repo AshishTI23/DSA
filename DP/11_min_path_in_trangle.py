@@ -22,7 +22,7 @@ from typing import List
 class Solution:
     def minimum_path_sum(self, triangle: List[List[int]]) -> int:
         n = len(triangle) - 1
-        # def recursive_min_sum(i, j):
+        # def recursive_min_sum(i, j) -> int:
         #     if i == n:
         #         return triangle[i][j]
         #     d = triangle[i][j] + recursive_min_sum(i + 1, j)
@@ -31,7 +31,7 @@ class Solution:
         #
         # return recursive_min_sum(0, 0)
 
-        def memoization_min_sum(n):
+        def memoization_min_sum(n) -> int:
             for i in range(n - 1, -1, -1):
                 for j in range(i + 1):
                     triangle[i][j] = min(
