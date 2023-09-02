@@ -23,20 +23,14 @@ class Solution:
         def find_subset(n, target):
             if target == 0:
                 return True
-
             if n == 0:
                 return (target - self.array[0]) == 0
-
             if dp[n][target] != -1:
                 return dp[n][target]
-
             take = find_subset(n - 1, target - self.array[n])
             not_take = find_subset(n - 1, target)
-
             dp[n][target] = take or not_take
-
             return dp[n][target]
-
         return find_subset(length - 1, target)
 
 
