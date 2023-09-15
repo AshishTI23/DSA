@@ -38,7 +38,7 @@ class Solution:
             mini = min(mini, min_path_sum(row, j))
         return mini
 
-    def memozation(self):
+    def memoization(self):
         row = len(self.input_matrix) - 1
         column = len(self.input_matrix[0]) - 1
         dp = [[-1 for j in range(row + 1)] for i in range(column + 1)]
