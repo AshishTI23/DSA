@@ -32,7 +32,7 @@ class Solution:
     def memoization(self) -> Any:
         target = self.target
         index = len(self.array)
-        dp = [[-1 for col in range(target+1)] for row in range(index)]
+        dp = [[-1 for col in range(target + 1)] for row in range(index)]
 
         def min_coins(index: int, target: int, dp: List[int]) -> Any:
             if index == 0:
@@ -51,7 +51,33 @@ class Solution:
 
         return min_coins(index - 1, target, dp)
 
+    def tabulation(self) -> Any:
+        T = self.target
+        index = len(self.array)
+        dp = [[0 for col in range(T + 1)] for row in range(index)]
 
-array = [1, 2, 3]
-target = 6
-print(Solution(array, target).memoization())
+        def min_coins(T: int, dp: List[int]) -> Any:
+            for col in range(T + 1):
+                if col % self.array[0] == 0:
+                    dp[0][col] = col // self.array[0]
+                else:
+                    dp[0][col] = float("inf")
+            for row in range(1, index):
+                for target in range(T + 1):
+                    not_take = dp[row - 1][target]
+                    take = float("inf")
+                    if target >= self.array[row]:
+                        take = 1 + dp[row][target - self.array[row]]
+                    dp[row][target] = min(take, not_take)
+
+            ans = dp[index - 1][T]
+            if ans >= float("inf"):
+                return -1
+            return ans
+
+        return min_coins(target, dp)
+
+
+array = [4, 2, 3]
+target = 7
+print(Solution(array, target).tabulation())
