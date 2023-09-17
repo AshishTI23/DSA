@@ -29,7 +29,29 @@ class Solution:
 
         return min_coins(index - 1, target)
 
+    def memoization(self) -> Any:
+        target = self.target
+        index = len(self.array)
+        dp = [[-1 for col in range(target+1)] for row in range(index)]
 
-array = [1, 2, 3, 4]
-target = 7
-print(Solution(array, target).recursive())
+        def min_coins(index: int, target: int, dp: List[int]) -> Any:
+            if index == 0:
+                if target % self.array[index] == 0:
+                    dp[index][target] = target // self.array[index]
+                    return dp[index][target]
+                return float("inf")
+            if dp[index][target] != -1:
+                return dp[index][target]
+            not_take = 0 + min_coins(index - 1, target, dp)
+            take = float("inf")
+            if target >= self.array[index]:
+                take = 1 + min_coins(index, target - self.array[index], dp)
+            dp[index][target] = min(take, not_take)
+            return dp[index][target]
+
+        return min_coins(index - 1, target, dp)
+
+
+array = [1, 2, 3]
+target = 6
+print(Solution(array, target).memoization())
