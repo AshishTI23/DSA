@@ -14,25 +14,16 @@ class Solution:
         self.array = array
         self.n: int = len(array)
         self.total: int = sum(array)
-        self.target: int = sum(array) // 2
 
     def recursive(self):
-        pass
-        # def min_diff(n: int, target: int) -> int:
-        #     print(target, 'Target')
-        #     if target < 0:
-        #         return float('inf')
-        #     if target == 0:
-        #         return target
-        #     if n == 0:
-        #         return target
-        #
-        #     take = min_diff(n-1, target - self.array[n])
-        #     not_take = min_diff(n-1, target)
-        #     print(take, not_take, 'take & not take')
-        #     return min(take, not_take)
-        #
-        # return min_diff(self.n - 1, self.target)
+        def min_diff(n: int, total_s1: int) -> int:
+            if n == 0:
+                return abs(2 * total_s1 - self.total)
+            take = min_diff(n - 1, total_s1 + self.array[n])
+            not_take = min_diff(n - 1, total_s1)
+            return min(take, not_take)
+
+        return min_diff(self.n - 1, 0)
 
 
 print(Solution([1, 2, 6]).recursive())

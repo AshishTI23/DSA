@@ -79,5 +79,5 @@ class Solution:
 
 
 array = [4, 2, 3]
-target = 7
+target = 9
 print(Solution(array, target).tabulation())
