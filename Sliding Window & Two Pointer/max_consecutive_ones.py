@@ -19,10 +19,9 @@ class Solution:
     def optimal(self, k: int) -> int:
         max_len = zeros = left = right = 0
         for right in range(len(self.array)):
-            print(left, right, self.array[right], self.array[left], zeros)
             if self.array[right] == 0:
                 zeros += 1
-            if zeros > k and self.array[right] == 0:
+            if zeros > k:
                 if self.array[left] == 0:
                     zeros -= 1
                 left += 1
