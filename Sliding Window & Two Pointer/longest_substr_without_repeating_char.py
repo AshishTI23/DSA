@@ -9,7 +9,7 @@ class Solution:
     def __init__(self, string: str) -> None:
         self.string = string
 
-    def brute_force(self):
+    def brute_force(self) -> int:
         max_length = 0
         for i in range(len(self.string)):
             hash = {}
@@ -20,7 +20,7 @@ class Solution:
                 hash[self.string[j]] = 1
         return max_length
     
-    def optimal(self):
+    def optimal(self) -> int:
         left = max_len = 0
         hash = {}
         for right in range(len(self.string)):
