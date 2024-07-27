@@ -11,9 +11,10 @@
 # Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 # Approach - Max consecutive subarray with k 0s
+from typing import List
 
 class Solution:
-    def __init__(self, array) -> None:
+    def __init__(self, array: List[int]) -> None:
         self.array = array
     
     def optimal(self, k: int) -> int:
