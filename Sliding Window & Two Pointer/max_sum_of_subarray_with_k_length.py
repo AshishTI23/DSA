@@ -11,7 +11,6 @@ class Solution:
         for i in range(len(self.array)):
             self.array[i] = prev_sum + self.array[i]
             prev_sum = self.array[i]
-        print(self.array)
         return self.array
 
     def optimized_time(self, k: int):
