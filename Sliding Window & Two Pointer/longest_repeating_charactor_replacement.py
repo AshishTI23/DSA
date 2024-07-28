@@ -39,11 +39,27 @@ class Solution:
                     break
         return max_len
     
+    def optimal(self, k: int) -> int:
+        max_len = max_frequency = left = 0
+        hash = {}
+        for right in range(len(self.string)):
+            if hash.get(self.string[right], None) is None:
+                    hash[self.string[right]] = 1
+            else:
+                hash[self.string[right]] += 1
+            max_frequency = max(max_frequency, hash[self.string[right]])
+            if (right - left + 1) - max_frequency <= k:
+                max_len = max(max_len, (right - left + 1))
+            if (right - left + 1) - max_frequency > k:
+                hash[self.string[left]] -= 1
+                left += 1
+        return max_len
+    
 # string = "ABAB"
 # k = 2
 
-string = "AABABBA"
+string = "AABAABBA"
 k = 1
 
 s = Solution(string)
-print(s.brute_force(k))
+print(s.optimal(k))
