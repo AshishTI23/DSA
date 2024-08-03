@@ -48,6 +48,14 @@ class Solution:
             return count
         return helper(self.array, self.goal) - helper(self.array, self.goal - 1)
     
+    # Change all odd numbers in array to 1 and even to 0
+    def convert_to_nice_array(self):
+        for index in range(len(self.array)):
+            if self.array[index] % 2 == 0:
+                self.array[index] = 0
+            else:
+                self.array[index] = 1
+    
 
 array = [1,0,0,1,1,0]
 goal = 2
